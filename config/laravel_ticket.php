@@ -73,5 +73,10 @@ return [
             ],
         ],
     ],
-
+    'models' => [
+        'thread' => Coderflex\LaravelTicket\Models\thread::class,
+        'message' => Coderflex\LaravelTicket\Models\Message::class,
+        'category' => Coderflex\LaravelTicket\Models\Category::class,
+        'label' => Coderflex\LaravelTicket\Models\Label::class
+    ]
 ];
