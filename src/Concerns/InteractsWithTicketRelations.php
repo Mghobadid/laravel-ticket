@@ -57,7 +57,7 @@ trait InteractsWithTicketRelations
     /**
      * Add new message on an existing ticket
      */
-    public function message(string $message): Model
+    public function message(string|null $message): Model
     {
         return $this->messageAsUser(auth()->user(), $message);
     }
@@ -65,10 +65,10 @@ trait InteractsWithTicketRelations
     /**
      * Add new message on an existing ticket as a custom user
      */
-    public function messageAsUser(?Model $user, string $message): Model
+    public function messageAsUser(?Model $user, string|null $message): Model
     {
         return $this->messages()->create([
-            'user_id' => $user?->id ?? auth()->id(), // @phpstan-ignore-line
+            'user_id' => $user?->id ?? auth()->id(), //@phpstan-ignore-line
             'message' => $message,
         ]);
     }
