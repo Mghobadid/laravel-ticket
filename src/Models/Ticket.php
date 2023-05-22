@@ -62,7 +62,7 @@ class Ticket extends Model
 
         return $this->hasMany(
             config('laravel_ticket.models.message'),
-            (string) $tableName['columns']['ticket_foreing_id'],
+            (string) $tableName['columns']['ticket_foreign_id'],
         );
     }
 
